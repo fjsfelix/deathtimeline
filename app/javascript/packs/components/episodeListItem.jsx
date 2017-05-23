@@ -10,6 +10,14 @@ const EpisodeListItem = (props) => {
     );
   }
 
+  var noDeaths = "";
+  if (props.episode.deaths.length === 0) {
+    noDeaths = (
+      <span> / No deaths</span>
+    );
+  }
+
+
   return (
     <li>
       {seasonTitle}
@@ -18,14 +26,12 @@ const EpisodeListItem = (props) => {
         <h3 className="episode-title">
           <span className='episode-title-num desktop-sm'>Season {props.episode.season_id}</span>
           <div className="name-container">
-            <h3 className='episode-title-name'>{props.episode.name}</h3>
+            <h3 className='episode-title-name'>{props.episode.name} {noDeaths}</h3>
           </div>
           <span className='episode-title-num'>Episode {props.episode.episodeNumber}</span>
         </h3>
         <div className="line"></div>
         <DeathList deaths={props.episode.deaths}/>
-        {/*<div className="line"></div>*/}
-        {/*<div className="line"></div>*/}
       </div>
     </li>
   );

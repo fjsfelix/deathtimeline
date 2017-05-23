@@ -17,6 +17,7 @@ const DeathList = (props) => {
 
   return (
     <ul className="episode-deaths">
+
       {deathListItems}
     </ul>
   );

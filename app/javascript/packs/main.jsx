@@ -5,6 +5,7 @@ import SideBar from './components/sideBar';
 import Spinner from './components/spinner';
 import $ from 'jquery';
 import _ from 'lodash';
+import Warning from "./components/warning";
 
 
 class Main extends React.Component {
@@ -72,7 +73,7 @@ class Main extends React.Component {
 
   handleScroll() {
     if (this.state.loadedSeason < 6) {
-      if ($(window).scrollTop() + $(window).height() >= $('#main-list').innerHeight()) {
+      if ($(window).scrollTop() + $(window).height() >= Math.floor($('#main-list').innerHeight())) {
         this.getSeason(this.state.loadedSeason + 1);
       }
     }
@@ -99,6 +100,7 @@ class Main extends React.Component {
             onCompactToggle={(toggle) => { this.onCompactToggle(toggle)}}/>
         </div>
         <div id="main-list" className={this.state.listClass}>
+          <Warning/>
           <Spinner classes={this.state.spinnerClasses}/>
           <EpisodeList episodes={this.state.episodes}/>
         </div>

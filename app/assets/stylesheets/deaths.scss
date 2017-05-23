@@ -1,6 +1,11 @@
 @import "common.scss";
 
 @mixin compact-1 {
+  .season-title {
+    font-size: 2em;
+    width: 384px;
+    text-align: center;
+  }
   .episode-container {
     .line {
       width: 192px;
@@ -113,6 +118,11 @@
 }
 
 @mixin compact-2 {
+  .season-title {
+    font-size: 1.6em;
+    width: auto;
+    text-align: left;
+  }
   .episode-container {
     .line {
       display: none;
@@ -210,9 +220,19 @@
   }
 }
 
+.season-title {
+  font-size: 3em;
+  font-family: "Montserrat";
+  text-align: center;
+}
 .episode-container {
   margin: 0 0 60px 0;
   //margin: 0;
+  .no-deaths {
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+  }
   .episode-deaths {
     box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.16);
     width: 100%;
@@ -349,15 +369,7 @@
       padding: 4px;
       display: inline-block;
     }
-    .importance-1 {
-      background-color: #34495e;
-    }
-    .importance-2 {
-      background-color: #3498db;
-    }
-    .importance-3 {
-      background-color: #2ecc71;
-    }
+
     .death-number {
       color: white;
       display: inline-block;

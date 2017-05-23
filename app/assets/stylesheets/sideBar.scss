@@ -13,6 +13,9 @@
   z-index: 102;
   background-color: #F5F4F5;
   transition: width 0.3s;
+  #side-bar-top {
+    display: none;
+  }
   .season-link {
     font-size: 1.2em;
     padding: 15px 20px;
@@ -116,6 +119,7 @@
       width: calc(100% - 56px);
       top: 0;
       left: 56px;
+      justify-content: flex-end;
       background-color: $base;
       border-bottom: 2px solid #bdc3c7;
       padding: 13px 20px;
@@ -129,9 +133,17 @@
 
 @media (max-width: 760px) {
   #side-bar {
-    display: none;
+    width: 0;
   }
   #side-bar-fixed {
-    display: none;
+    width: 100%;
+    height: 56px;
+    #side-bar-top {
+      display: flex;
+      border-bottom: 4px solid #bdc3c7;
+      .logo {
+        border: 0;
+      }
+    }
   }
 }

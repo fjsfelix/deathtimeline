@@ -6,7 +6,7 @@ class SeasonTitle extends React.Component {
   }
   render() {
     return (
-      <h2 id={"season-" + this.props.season}>{this.props.season}</h2>
+      <h2 className="season-title" id={"season-" + this.props.season}>Season {this.props.season}</h2>
     );
   }
 }

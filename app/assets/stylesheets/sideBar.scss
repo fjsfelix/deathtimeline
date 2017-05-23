@@ -1,0 +1,137 @@
+@import "common.scss";
+
+#side-bar {
+  width: 280px;
+  height: 100vh;
+}
+
+#side-bar-fixed {
+  font-family: 'Montserrat';
+  position: fixed;
+  width: 280px;
+  height: 100vh;
+  z-index: 102;
+  background-color: #F5F4F5;
+  transition: width 0.3s;
+  .season-link {
+    font-size: 1.2em;
+    padding: 15px 20px;
+    text-align: left;
+    transition: background-color, color 0.3s;
+    cursor: pointer;
+    white-space: nowrap;
+    &:hover {
+      border-right: 4px solid $red;
+      color: $red;
+      background-color: white;
+    }
+  }
+  .logo-container {
+    height: 56px;
+    display: flex;
+    .title-container {
+      display: inline-block;
+      padding-left: 10px;
+      overflow: hidden;
+      white-space: nowrap;
+      h2 {
+        font-size: 1em;
+        margin: 5px 0 0 1px;
+        color: $red;
+      }
+      h1 {
+        font-size: 1.45em;
+        margin: 2px 0 0 0;
+      }
+    }
+  }
+  .toggle-container {
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .toggle-outer {
+      width: 60px;
+      height: 30px;
+      background-color: #bdc3c7;
+      border-radius: 15px;
+      position: relative;
+      transition: background-color 0.4s;
+      &.toggle-on {
+        background-color: #2ecc71;
+      }
+      .toggle-inner {
+        position: absolute;
+        background-color: white;
+        height: 24px;
+        width: 24px;
+        border-radius: 100%;
+        top: 3px;
+        left: 3px;
+        transition: left 0.4s;
+        &.toggle-right {
+          left: 33px;
+        }
+      }
+      .toggle-text {
+        font-size: 11px;
+        color: rgba(0, 0, 0, 0.15);
+        position: absolute;
+        top: 9px;
+        &.toggle-text-off {
+          right: 6px;
+        }
+        &.toggle-text-on {
+          left: 8px;
+        }
+      }
+    }
+  }
+}
+.side-bar-divider{
+  height: 40px;
+}
+
+
+@media (max-width: 960px) {
+  #side-bar {
+    width: 56px;
+  }
+  #side-bar-fixed {
+    width: 56px;
+    .logo-container .title-container {
+      display: none;
+    }
+    .logo {
+      border-bottom: 2px solid #bdc3c7;
+    }
+    .season-link {
+      padding: 8px;
+      text-align: center;
+    }
+    .toggle-container {
+      position: fixed;
+      width: calc(100% - 56px);
+      top: 0;
+      left: 56px;
+      background-color: $base;
+      border-bottom: 2px solid #bdc3c7;
+      padding: 13px 20px;
+      height: 56px;
+      .toggle-outer {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  #side-bar {
+    display: none;
+  }
+  #side-bar-fixed {
+    display: none;
+  }
+}

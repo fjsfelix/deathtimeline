@@ -1,0 +1,93 @@
+@import "font-awesome";
+@import "normalize.css";
+@import "common.scss";
+@import "deaths.scss";
+@import "episodes.scss";
+@import "sideBar.scss";
+
+
+
+body {
+  font-family: 'Open Sans';
+  margin: 0;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+.main-container {
+  display: flex;
+}
+
+.logo {
+  height: 56px;
+  width: 56px;
+  padding: 6px;
+  background-color: $red;
+  color: white;
+  font-size: 1.1em;
+  display: inline-block;
+}
+
+.spinner-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: $red;
+  width: calc(100% - 280px);
+  color: white;
+  display: flex;
+  font-family: 'Montserrat';
+  justify-content: center;
+  align-items: center;
+  z-index: 101;
+  height: 50px;
+  transition: bottom 0.4s;
+  &.spinner-hidden{
+    height: 0;
+    bottom: -60px;
+    overflow-y: hidden;
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+.mobile-sm {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+  .spinner-container {
+    width: calc(100% - 40px);
+  }
+}
+@media (max-width: 760px) {
+  .mobile-sm {
+    display: block;
+  }
+  .desktop-sm {
+    display: none;
+  }
+  .spinner-container {
+    width: 100%;
+  }
+}

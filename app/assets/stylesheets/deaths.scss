@@ -1,0 +1,430 @@
+@import "common.scss";
+
+@mixin compact-1 {
+  .episode-container {
+    .line {
+      width: 192px;
+    }
+    .episode-title {
+      .episode-title-num {
+        font-size: 0.9em;
+        width: 90px;
+      }
+      .name-container {
+        width: 382px;
+        text-align: center;
+      }
+      .episode-title-name {
+        padding: 10px 16px;
+        font-size: 1.1em;
+        display: inline-block;
+        margin: 0;
+      }
+    }
+  }
+  .death-inner.reverse {
+    flex-direction: row;
+    .death-left {
+      border-left: none;
+      text-align: left;
+      width: 190px;
+      padding: 20px 0 20px 20px;
+      .death-number {
+        bottom: 2px;
+        left: 6px;
+      }
+    }
+    .death-right {
+      border-left: 2px solid red;
+      padding: 15px 15px 15px 40px;
+      text-align: left;
+    }
+  }
+  .death-container {
+    .death-inner {
+      width: calc(100% - 80px);
+    }
+    .death-left {
+      height: 170px;
+      width: 190px;
+      padding: 20px 0 20px 20px;
+      text-align: left;
+      &.left-full-length {
+        width: 190px;
+      }
+      .death-number {
+        width: 37px;
+        height: 37px;
+        font-size: 16px;
+        padding-top: 11px;
+        bottom: 2px;
+        left: 6px;
+      }
+      .death-img {
+        width: 122px;
+        height: 122px;
+      }
+      .importance {
+        width: 130px;
+        height: 130px;
+      }
+    }
+    .bubble {
+      top: 90px;
+      left: 190px;
+      width: 45px;
+      height: 45px;
+      padding-top: 13px;
+      font-size: 0.82em;
+    }
+    .death-right {
+      padding: 15px 15px 15px 40px;
+      width: calc(100% - 270px);
+      .tag {
+        margin: 22px 5px 0 0;
+        font-size: 0.8em;
+      }
+      h3 {
+        font-size: 2em;
+        margin: 10px 0 0 0;
+      }
+      h4 {
+        font-size: 1em;
+        margin: 10px 0 0 2px;
+      }
+      .death-link {
+        font-size: 0.6em;
+        padding: 4px 8px;
+      }
+      &.full-length {
+        width: calc(100% - 190px);
+      }
+    }
+    .house-container {
+      width: 80px;
+      padding: 0;
+      .house-img {
+        margin-top: 55px;
+        width: 70px;
+        height: 70px;
+      }
+    }
+  }
+}
+
+@mixin compact-2 {
+  .episode-container {
+    .line {
+      display: none;
+    }
+    .episode-title {
+      margin: 0 0 20px 0;
+      .episode-title-num {
+        font-size: 0.8em;
+      }
+      .name-container {
+        width: auto;
+        text-align: left;
+      }
+      .episode-title-name {
+        padding: 0;
+        border: none;
+        text-align: left;
+        margin-right: 40px;
+      }
+    }
+  }
+  .death-inner.reverse {
+    .death-left {
+      width: 130px;
+      padding: 15px 0 15px 10px;
+      .death-number {
+        bottom: -4px;
+        left: 0px;
+      }
+    }
+    .death-right {
+      padding: 10px 10px 10px 30px;
+      width: calc(100% - 130px);
+    }
+  }
+  .death-container {
+    .death-inner {
+      width: calc(100% - 60px);
+    }
+    .death-left {
+      height: 120px;
+      width: 130px;
+      padding: 15px 0 15px 10px;
+      .death-number {
+        bottom: -4px;
+        left: 0px;
+      }
+      .death-img {
+        width: 82px;
+        height: 82px;
+      }
+      .importance {
+        width: 90px;
+        height: 90px;
+      }
+      &.left-full-length {
+        width: 130px;
+      }
+    }
+    .bubble {
+      top: 60px;
+      left: 130px;
+      width: 45px;
+      height: 45px;
+      padding-top: 13px;
+      font-size: 0.82em;
+    }
+    .death-right {
+      padding: 10px 10px 10px 30px;
+      width: calc(100% - 130px);
+      .tag{
+        margin: 6px 3px 0 0;
+        //font-size: 0.8em;
+      }
+      h3 {
+        font-size: 1.6em;
+        margin: 6px 0 0 0;
+      }
+      h4 {
+        font-size: 0.85em;
+        margin: 6px 0 0 2px;
+      }
+      &.full-length {
+        width: calc(100% - 130px);
+      }
+    }
+    .house-container {
+      width: 60px;
+      .house-img {
+        margin-top: 40px;
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+}
+
+.episode-container {
+  margin: 0 0 60px 0;
+  //margin: 0;
+  .episode-deaths {
+    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.16);
+    width: 100%;
+    background-color: $base;
+  }
+  .line {
+    width: calc(50% + 2px);
+    border-right: 2px solid $red;
+    height: 30px;
+  }
+
+  .episode-title {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    justify-content: space-between;
+    font-family: 'Montserrat';
+    color: $red;
+    .episode-title-num {
+      color: black;
+      font-size: 1.2em;
+      width: 120px;
+      text-align: center;
+      white-space:nowrap;
+    }
+    .episode-title-name {
+      margin: 0 20px;
+      padding: 12px 30px;
+      font-size: 1.5em;
+      font-weight: 300;
+      border: 2px solid $red;
+      text-align: center;
+
+    }
+  }
+}
+
+#main-list {
+  width: calc(100% - 280px);
+  padding: 40px 3%;
+}
+
+#main-list.compact-view {
+  @include compact-1;
+  @include compact-2;
+  @include reverse-gradient;
+  .house-container.mobile-sm {
+    display: block;
+  }
+  .house-container.desktop-sm {
+    display: none;
+  }
+}
+
+.death-inner.reverse{
+  flex-direction: row-reverse;
+  .death-left {
+    border-left: 2px solid $red;
+    text-align: left;
+    padding: 25px 0 25px 50px;
+    width: calc(50% + 50px);
+    .death-number {
+      left: 131px;
+
+    }
+  }
+  .death-right {
+    border: none;
+    text-align: right;
+    padding: 25px 50px 25px 25px;
+    width: calc(50% - 50px);
+  }
+}
+
+.death-link {
+  border: 2px solid black;
+  color: black;
+  font-family: "Montserrat";
+  padding: 6px 12px;
+  display: inline-block;
+  font-size: 0.8em;
+  border-radius: 20px;
+  transition: all 0.3s;
+  &:hover {
+    border-color: black;
+    background-color: black;
+    color: white;
+  }
+}
+
+.death-container {
+  display: flex;
+  position: relative;
+  align-items: stretch;
+  .bubble {
+    border: 2px solid $red;
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background-color: $red;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    padding-top: 16px;
+    text-align: center;
+    color: white;
+    z-index: 100;
+  }
+  .death-inner {
+    width: calc(100% - 100px);
+    display: flex;
+    align-items: stretch;
+    &.inner-full-length {
+      width: 100%;
+    }
+  }
+  .death-left {
+    width: calc(50% - 50px);
+    padding: 25px 50px 25px 0;
+    text-align: right;
+    .death-img {
+      width: 182px;
+      height: 182px;
+      border-radius: 100%;
+      object-fit: cover;
+    }
+    .importance {
+      position: relative;
+      border-radius: 100%;
+      width: 190px;
+      height: 190px;
+      padding: 4px;
+      display: inline-block;
+    }
+    .importance-1 {
+      background-color: #34495e;
+    }
+    .importance-2 {
+      background-color: #3498db;
+    }
+    .importance-3 {
+      background-color: #2ecc71;
+    }
+    .death-number {
+      color: white;
+      display: inline-block;
+      font-family: "Montserrat";
+      position: absolute;
+      bottom: 3px;
+      left: 6px;
+      font-size: 22px;
+      height: 50px;
+      width: 50px;
+      padding-top: 13px;
+      text-align: center;
+      border-radius: 100%;
+      font-weight: 300;
+      border-radius: 30px;
+      margin-right: 5px;
+    }
+    &.left-full-length {
+      width: 50%;
+    }
+  }
+  .death-right {
+    padding: 20px 20px 20px 50px;
+    border-left: 2px solid $red;
+    width: calc(50% + 50px);
+    .tag {
+      margin: 38px 5px 0 0;
+    }
+    h3 {
+      margin: 10px 0 0 0;
+      font-size: 2.2em;
+      font-weight: 300;
+    }
+    h4 {
+      font-size: 1.1em;
+      font-weight: 300;
+      margin: 15px 0 0 5px;
+    }
+    &.full-length {
+      width: 50%;
+    }
+  }
+  .house-container {
+    width: 100px;
+    padding-left: 10px;
+    .house-img {
+      margin-top: 80px;
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  #main-list {
+    width: calc(100% - 56px);
+  }
+}
+
+@media (max-width: 760px) {
+  @include compact-1;
+  #main-list {
+    width: 100%;
+    padding: 40px 8px;
+  }
+}
+
+@media (max-width: 530px) {
+  @include compact-2;
+}

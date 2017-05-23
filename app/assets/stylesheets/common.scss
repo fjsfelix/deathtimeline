@@ -1,0 +1,136 @@
+$red: #FF4E50;
+$base:  #F5F4F5;
+$link-blue: #2196F3;
+$dark-blue: #1E88E5;
+
+
+
+@mixin house-gradient($dir, $color) {
+  background: linear-gradient( to $dir , $base, $color);
+}
+
+@mixin light-text {
+  color: white;
+  .death-link {
+    border-color: white;
+    color: white;
+    &:hover {
+      border-color: white;
+      background-color: white;
+      color: black;
+    }
+  }
+}
+
+.Stark-bg-solid {
+  background-color: #D4CDB2;
+}
+.Stark-bg {
+  @include house-gradient(left, #D4CDB2);
+}
+.Baratheon-bg-solid {
+  background-color: #AB9269;
+}
+.Baratheon-bg {
+  @include house-gradient(left, #AB9269);
+}
+.Targaryen-bg-solid {
+  background-color: #000000;
+}
+.Targaryen-bg {
+  @include light-text;
+  @include house-gradient(left, #000000);
+}
+.Lannister-bg-solid {
+  background-color: #860C11;
+}
+.Lannister-bg {
+  @include house-gradient(left, #860C11);
+}
+.Arryn-bg-solid {
+  background-color: #111A28;
+}
+.Arryn-bg {
+  @include light-text;
+  @include house-gradient(left, #111A28);
+}
+.Tully-bg-solid {
+  background-color: #22234F;
+}
+.Tully-bg {
+  @include house-gradient(left, #22234F);
+}
+.Tyrell-bg-solid {
+  background-color: #8D9F81;
+}
+.Tyrell-bg {
+  @include house-gradient(left, #8D9F81);
+}
+.Frey-bg-solid {
+  background-color: #7D7D7D;
+}
+.Frey-bg {
+  @include house-gradient(left, #7D7D7D);
+}
+.Bolton-bg-solid {
+  background-color: #000000;
+}
+.Bolton-bg {
+  @include light-text;
+  @include house-gradient(left, #000000);
+}
+.Martell-bg-solid {
+  background-color: #EE8643;
+}
+.Martell-bg {
+  @include house-gradient(left, #EE8643);
+}
+.Greyjoy-bg-solid {
+  background-color: #1A1A1A;
+}
+.Greyjoy-bg {
+  @include house-gradient(left, #1A1A1A);
+}
+
+@mixin reverse-gradient {
+  .Stark-bg {
+    @include house-gradient(right, #D4CDB2);
+  }
+  .Baratheon-bg {
+    @include house-gradient(right, #AB9269);
+  }
+  .Targaryen-bg {
+    color: white;
+    @include house-gradient(right, #000000);
+  }
+  .Lannister-bg {
+    @include house-gradient(right, #860C11);
+  }
+  .Arryn-bg {
+    color: white;
+    @include house-gradient(right, #111A28);
+  }
+  .Tully-bg {
+    @include house-gradient(right, #22234F);
+  }
+  .Tyrell-bg {
+    @include house-gradient(right, #8D9F81);
+  }
+  .Frey-bg {
+    @include house-gradient(right, #7D7D7D);
+  }
+  .Bolton-bg {
+    @include house-gradient(right, #000000);
+  }
+  .Martell-bg {
+    @include house-gradient(right, #EE8643);
+  }
+  .Greyjoy-bg {
+    @include house-gradient(right, #1A1A1A);
+  }
+}
+
+
+@media (max-width: 760px) {
+  @include reverse-gradient;
+}

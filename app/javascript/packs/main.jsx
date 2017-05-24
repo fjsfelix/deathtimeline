@@ -73,7 +73,10 @@ class Main extends React.Component {
 
   handleScroll() {
     if (this.state.loadedSeason < 6) {
-      if ($(window).scrollTop() + $(window).height() >= Math.floor($('#main-list').innerHeight()) - 20) {
+      // if ($(window).scrollTop() + $(window).height() >= Math.floor($('#main-list').innerHeight()) - 20) {
+      //   this.getSeason(this.state.loadedSeason + 1);
+      // }
+      if (document.body.scrollHeight == document.body.scrollTop +  window.innerHeight) {
         this.getSeason(this.state.loadedSeason + 1);
       }
     }
